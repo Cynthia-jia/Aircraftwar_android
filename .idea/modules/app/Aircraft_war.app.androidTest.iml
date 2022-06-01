@@ -95,6 +95,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-components:17.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-auth-interop:19.0.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-database-collection:18.0.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.litepal.guolindev:core:3.2.3@aar" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="Aircraft_war.app.main" />
 </module>

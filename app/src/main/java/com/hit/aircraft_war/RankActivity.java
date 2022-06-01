@@ -1,11 +1,8 @@
 package com.hit.aircraft_war;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputFilter;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,20 +13,16 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.hit.aircraft_war.RankPack.RankAdapter;
-import com.hit.aircraft_war.RankPack.RankDao;
-import com.hit.aircraft_war.RankPack.RankDaoImpl;
-import com.hit.aircraft_war.RankPack.RankMember;
+import com.hit.aircraft_war.Store.RankAdapter;
+import com.hit.aircraft_war.Store.RankDao;
+import com.hit.aircraft_war.Store.RankDaoImpl;
+import com.hit.aircraft_war.Store.RankMember;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;

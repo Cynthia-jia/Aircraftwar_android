@@ -1,4 +1,4 @@
-package com.hit.aircraft_war.RankPack;
+package com.hit.aircraft_war.Store;
 
 import android.view.LayoutInflater;
 import android.view.View;

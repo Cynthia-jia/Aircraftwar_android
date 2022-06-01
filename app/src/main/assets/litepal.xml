@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <!--
+        定义应用程序的数据库名称。默认情况下,每个数据库名称应以.db结束。如果你没有名字数据库以.db结束, LitePal将为您自动加上后缀
+    -->
+    <dbname value="User" />
+    <!--
+        定义数据库的版本。每一次当你想要数据库升级时,如表中添加字段了增加表了。
+        修改模型中定义的映射标签“version”,就使版本值+ 1,数据库的升级将自动处理而不会出现问题。
+    -->
+    <version value="1" />
+
+    <list>
+        <mapping class="com.hit.aircraft_war.Store.User"/>
+    </list>
+    <!--
+        定义.db文件的位置。
+        “internal”表示.db文件将存储在内部存储的数据库文件夹中，无人可以访问。
+        “external”表示.db文件将存储在主外部存储设备上目录的路径中，每个人都可以访问的永久文件。
+        默认值为“内部 internal”。
+    -->
+    <storage value ="external"/>
+</litepal>
