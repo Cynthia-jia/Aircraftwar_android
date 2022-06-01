@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.hit.aircraft_war" >
+    package="com.hit.aircraft_war">
 
     <application
         android:allowBackup="true"
@@ -12,12 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Aircraft_war"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
         <activity android:name=".RankActivity" />
         <activity android:name=".GameActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
