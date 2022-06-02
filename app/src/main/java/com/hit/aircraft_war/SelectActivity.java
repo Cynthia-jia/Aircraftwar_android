@@ -9,6 +9,9 @@ import android.widget.Button;
 
 public class SelectActivity extends AppCompatActivity {
 
+    private String email;
+    private String password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +24,11 @@ public class SelectActivity extends AppCompatActivity {
 
         Button singleBtn = findViewById(R.id.select_singleButton);
         Button doubleBtn = findViewById(R.id.select_doubleButton);
+        Button profileBtn = findViewById(R.id.select_profileButton);
+
+        Intent lastIntent = getIntent();
+        email = lastIntent.getStringExtra("userEmail");
+        password = lastIntent.getStringExtra("userPassword");
 
         singleBtn.setOnClickListener(v -> {
             Intent intent = new Intent(SelectActivity.this, MainActivity.class);
@@ -32,6 +40,13 @@ public class SelectActivity extends AppCompatActivity {
             Intent intent = new Intent(SelectActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
+        });
+
+        profileBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(SelectActivity.this, ProfileActivity.class);
+            intent.putExtra("userEmail",email);
+            intent.putExtra("userPassword",password);
+            startActivity(intent);
         });
     }
 }

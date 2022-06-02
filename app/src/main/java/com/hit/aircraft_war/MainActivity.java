@@ -59,11 +59,11 @@ public class MainActivity extends AppCompatActivity {
                 if(isChecked) {
                     //选中时 do some thing
                     bgmFlag=true;
-                    Toast.makeText(MainActivity.this,"选择是"+isChecked, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"音效开启", Toast.LENGTH_SHORT).show();
                 } else {
                     //非选中时 do some thing
                     bgmFlag=false;
-                    Toast.makeText(MainActivity.this,"选择是"+isChecked,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"音效关闭", Toast.LENGTH_SHORT).show();
                 }
 
             }

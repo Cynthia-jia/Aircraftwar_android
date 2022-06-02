@@ -24,26 +24,39 @@
         android:id="@+id/select_singleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="108dp"
         android:gravity="center"
         android:text="@string/singlePlayer"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_textView" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <Button
+        android:id="@+id/select_doubleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:contentDescription="@string/nothing"
-        app:layout_constraintBottom_toBottomOf="@+id/select_doubleButton"
-        app:layout_constraintEnd_toStartOf="@+id/select_doubleButton"
-        app:layout_constraintTop_toTopOf="@+id/select_doubleButton"
-        app:layout_constraintVertical_bias="0.076"
-        app:srcCompat="@drawable/ic_baseline_filter_2_24" />
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="@string/doublePlayer"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/select_singleButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/select_singleButton"
+        app:layout_constraintTop_toBottomOf="@+id/select_singleButton" />
+
+    <Button
+        android:id="@+id/select_profileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="@string/profile"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/select_doubleButton"
+        app:layout_constraintStart_toStartOf="@+id/select_doubleButton"
+        app:layout_constraintTop_toBottomOf="@+id/select_doubleButton" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -54,20 +67,28 @@
         app:layout_constraintBottom_toBottomOf="@+id/select_singleButton"
         app:layout_constraintEnd_toStartOf="@+id/select_singleButton"
         app:layout_constraintTop_toTopOf="@+id/select_singleButton"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_baseline_filter_1_24" />
 
-    <Button
-        android:id="@+id/select_doubleButton"
+    <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:gravity="center"
-        android:text="@string/doublePlayer"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/select_singleButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/select_singleButton"
-        app:layout_constraintTop_toBottomOf="@+id/select_singleButton" />
+        android:layout_marginEnd="12dp"
+        android:contentDescription="@string/nothing"
+        app:layout_constraintBottom_toBottomOf="@+id/select_doubleButton"
+        app:layout_constraintEnd_toStartOf="@+id/select_doubleButton"
+        app:layout_constraintTop_toTopOf="@+id/select_doubleButton"
+        app:srcCompat="@drawable/ic_baseline_filter_2_24" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/select_profileButton"
+        app:layout_constraintEnd_toStartOf="@+id/select_profileButton"
+        app:layout_constraintTop_toTopOf="@+id/select_profileButton"
+        app:srcCompat="@drawable/ic_baseline_person_outline_24"
+        android:contentDescription="@string/nothing" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

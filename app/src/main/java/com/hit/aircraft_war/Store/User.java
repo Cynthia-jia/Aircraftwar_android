@@ -4,7 +4,14 @@ import org.litepal.crud.LitePalSupport;
 
 public class User extends LitePalSupport {
     private String userEmail;
-    private String password;
+    private String userPassword;
+
+    public User(String userEmail, String password) {
+        this.userEmail = userEmail;
+        this.userPassword = password;
+    }
+
+    public User() {}
 
     public String getUserEmail() {
         return userEmail;
@@ -14,11 +21,11 @@ public class User extends LitePalSupport {
         this.userEmail = userEmail;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 }
