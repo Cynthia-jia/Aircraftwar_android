@@ -7,6 +7,7 @@ import android.os.Message;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.hit.aircraft_war.application.GameView;
@@ -23,6 +24,11 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
 
         handler = new MyHandler();
 

@@ -20,4 +20,8 @@
     <string name="register_confirmPassword">确认密码</string>
     <string name="register_title">注册用户</string>
     <string name="regActivityButton">注册</string>
+    <string name="modeChoice">模式选择</string>
+    <string name="singlePlayer">单机模式</string>
+    <string name="doublePlayer">对战模式</string>
+    <string name="nothing">nothing</string>
 </resources>

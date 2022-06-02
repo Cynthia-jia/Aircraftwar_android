@@ -17,44 +17,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_textView"
-        app:layout_constraintVertical_bias="0.115" />
-
-    <Button
-        android:id="@+id/main_mediumButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/medium"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/main_hardButton"
-        app:layout_constraintEnd_toEndOf="@+id/main_easyButton"
-        app:layout_constraintStart_toStartOf="@+id/main_easyButton"
-        app:layout_constraintTop_toBottomOf="@+id/main_easyButton" />
-
-    <Button
-        android:id="@+id/main_hardButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="208dp"
-        android:text="@string/hard"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/main_mediumButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/main_mediumButton" />
-
-    <TextView
-        android:id="@+id/main_textView"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="@string/difficultySelect"
-        android:gravity="center"
-        android:textSize="24sp"
-        android:textColor="@color/white"
-        android:background="@color/purple_500"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.154" />
 
     <Switch
         android:id="@+id/soundSwitch"
@@ -67,7 +30,45 @@
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="@+id/main_hardButton"
         app:layout_constraintTop_toBottomOf="@+id/main_hardButton"
-        app:layout_constraintVertical_bias="0.425"
+        app:layout_constraintVertical_bias="0.393"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Button
+        android:id="@+id/main_mediumButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/medium"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/main_easyButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/main_easyButton"
+        app:layout_constraintTop_toBottomOf="@+id/main_easyButton" />
+
+    <Button
+        android:id="@+id/main_hardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/hard"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/main_mediumButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/main_mediumButton"
+        app:layout_constraintTop_toBottomOf="@+id/main_mediumButton" />
+
+    <TextView
+        android:id="@+id/main_textView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/purple_500"
+        android:gravity="center"
+        android:text="@string/difficultySelect"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

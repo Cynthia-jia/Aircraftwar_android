@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -55,6 +56,11 @@ public class RankActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rank);
 
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
+
         //初始化数据源，并保存数据到本地
         try {
             initData();
@@ -68,13 +74,6 @@ public class RankActivity extends AppCompatActivity {
         button1.setOnClickListener(V -> {
             buttonAction();
         });
-
-//        Button back = findViewById(R.id.rank_backButton);
-//        back.setOnClickListener(V -> {
-//            Intent intent = new Intent(RankActivity.this, MainActivity.class);
-//            startActivity(intent);
-//            finish();
-//        });
 
     }
 
