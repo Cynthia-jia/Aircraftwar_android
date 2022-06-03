@@ -14,10 +14,10 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.hit.aircraft_war.Store.RankAdapter;
-import com.hit.aircraft_war.Store.RankDao;
-import com.hit.aircraft_war.Store.RankDaoImpl;
-import com.hit.aircraft_war.Store.RankMember;
+import com.hit.aircraft_war.store.RankAdapter;
+import com.hit.aircraft_war.store.RankDao;
+import com.hit.aircraft_war.store.RankDaoImpl;
+import com.hit.aircraft_war.store.RankMember;
 
 import java.io.BufferedReader;
 import java.io.File;

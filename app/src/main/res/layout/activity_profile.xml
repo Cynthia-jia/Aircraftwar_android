@@ -35,8 +35,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:textSize="20sp"
         android:gravity="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/information"
         app:layout_constraintStart_toStartOf="@+id/information"
         app:layout_constraintTop_toBottomOf="@+id/information" />
@@ -46,23 +46,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:textSize="20sp"
         android:gravity="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/profile_showEmail"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/profile_showEmail"
         app:layout_constraintTop_toBottomOf="@+id/profile_showEmail" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="120dp"
+        android:id="@+id/profile_resignButton"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="110dp"
         android:layout_height="56dp"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginTop="108dp"
-        android:text="@string/deleteInfo"
+        android:text="@string/resign"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_showPassword" />
+
+    <Button
+        android:id="@+id/profile_deleteButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/deleteInfo"
+        app:layout_constraintEnd_toEndOf="@+id/profile_resignButton"
+        app:layout_constraintStart_toStartOf="@+id/profile_resignButton"
+        app:layout_constraintTop_toBottomOf="@+id/profile_resignButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.hit.aircraft_war.Store.User;
+import com.hit.aircraft_war.controller.ActivityController;
+import com.hit.aircraft_war.store.User;
 
 import org.litepal.LitePal;
 
@@ -63,6 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Log.d(TAG, "createUserWithEmail:success");
                     Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
 
+                    ActivityController.finishAll();
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(intent);
 

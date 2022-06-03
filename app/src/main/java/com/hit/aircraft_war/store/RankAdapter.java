@@ -1,4 +1,4 @@
-package com.hit.aircraft_war.Store;
+package com.hit.aircraft_war.store;
 
 import android.view.LayoutInflater;
 import android.view.View;

@@ -27,4 +27,5 @@
     <string name="profile">个人中心</string>
     <string name="information">账户信息</string>
     <string name="deleteInfo">注销账号</string>
+    <string name="resign">退出登录</string>
 </resources>

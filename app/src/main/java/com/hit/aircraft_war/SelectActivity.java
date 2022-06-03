@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.hit.aircraft_war.controller.ActivityController;
+
 public class SelectActivity extends AppCompatActivity {
 
     private String email;
@@ -16,6 +18,7 @@ public class SelectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
+        ActivityController.addActivity(this);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -33,13 +36,11 @@ public class SelectActivity extends AppCompatActivity {
         singleBtn.setOnClickListener(v -> {
             Intent intent = new Intent(SelectActivity.this, MainActivity.class);
             startActivity(intent);
-            finish();
         });
 
         doubleBtn.setOnClickListener(v -> {
             Intent intent = new Intent(SelectActivity.this, MainActivity.class);
             startActivity(intent);
-            finish();
         });
 
         profileBtn.setOnClickListener(v -> {

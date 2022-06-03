@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hit.aircraft_war.controller.ActivityController;
+
 public class MainActivity extends AppCompatActivity {
 
     /**难度标志
@@ -76,23 +78,23 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.main_easyButton).setOnClickListener(v -> {
             difficultChoice = 0;
+            ActivityController.finishAll();
             Intent intent = new Intent(this, GameActivity.class);
-
             startActivity(intent);
-
             finish();
         });
 
         findViewById(R.id.main_mediumButton).setOnClickListener(v -> {
             difficultChoice = 1;
+            ActivityController.finishAll();
             Intent intent = new Intent(this, GameActivity.class);
-
             startActivity(intent);
             finish();
         });
 
         findViewById(R.id.main_hardButton).setOnClickListener(v -> {
             difficultChoice = 2;
+            ActivityController.finishAll();
             Intent intent = new Intent(this, GameActivity.class);
             startActivity(intent);
             finish();

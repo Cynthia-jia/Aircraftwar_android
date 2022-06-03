@@ -1,4 +1,4 @@
-package com.hit.aircraft_war.Store;
+package com.hit.aircraft_war.store;
 
 public class RankMember {
     private int rank;

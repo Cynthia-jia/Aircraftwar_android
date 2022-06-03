@@ -9,7 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.hit.aircraft_war.Store.User;
+import com.hit.aircraft_war.controller.ActivityController;
+import com.hit.aircraft_war.store.User;
 
 import org.litepal.LitePal;
 
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ActivityController.addActivity(this);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -42,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
         registerBtn.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
-            finish();
         });
     }
 
