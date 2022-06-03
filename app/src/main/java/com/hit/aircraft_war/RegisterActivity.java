@@ -51,13 +51,17 @@ public class RegisterActivity extends AppCompatActivity {
                 List<User> users = LitePal.findAll(User.class);
                 for (int i=0; i<users.size(); i++) {
                     if (users.get(i).getUserEmail().equals(email)) {
-                        Toast.makeText(RegisterActivity.this, "该邮箱已被注册", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "该邮箱已被注册", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (users.get(i).getUserName().equals(userName)) {
+                        Toast.makeText(this, "用户名重复", Toast.LENGTH_SHORT).show();
                         return;
                     }
                 }
                 //判断两次密码是否一致
                 if (!password.equals(etConfirm.getText().toString())) {
-                    Toast.makeText(RegisterActivity.this, "两次密码不一致，请重新输入", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "两次密码不一致，请重新输入", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 //新建用户
@@ -65,7 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
                 boolean successful = user.save();
                 if (successful) {
                     Log.d(TAG, "createUserWithEmail:success");
-                    Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
 
                     ActivityController.finishAll();
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
