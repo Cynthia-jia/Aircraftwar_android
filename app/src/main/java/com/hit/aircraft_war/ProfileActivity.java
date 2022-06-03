@@ -16,10 +16,10 @@ import com.hit.aircraft_war.store.User;
 
 import org.litepal.LitePal;
 
+import java.util.List;
+
 public class ProfileActivity extends AppCompatActivity {
 
-    private TextView showEmail;
-    private TextView showPassword;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,16 +31,23 @@ public class ProfileActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
-        showEmail = findViewById(R.id.profile_showEmail);
-        showPassword = findViewById(R.id.profile_showPassword);
+        //获取信息
+        TextView showEmail = findViewById(R.id.profile_showEmail);
+        TextView showPassword = findViewById(R.id.profile_showPassword);
+        TextView showName = findViewById(R.id.profile_showName);
 
         Intent lastIntent = getIntent();
         String email = lastIntent.getStringExtra("userEmail");
         String password = lastIntent.getStringExtra("userPassword");
 
-        showEmail.setText("邮 箱："+email);
-        showPassword.setText("密 码："+password);
+        List<User> users = LitePal.where("userEmail = ?", email).find(User.class);
+        String name = users.get(0).getUserName();
 
+        showEmail.setText("邮  箱："+email);
+        showPassword.setText("密  码："+password);
+        showName.setText("用户名："+name);
+
+        //按键事件
         Button resignBtn = findViewById(R.id.profile_resignButton);
         Button deleteBtn = findViewById(R.id.profile_deleteButton);
 

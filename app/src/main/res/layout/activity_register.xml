@@ -23,39 +23,20 @@
     </androidx.appcompat.widget.Toolbar>
 
     <EditText
-        android:id="@+id/register_emailAddress"
+        android:id="@+id/register_userName"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="200dp"
-        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:layout_marginTop="36dp"
+        android:drawableStart="@drawable/ic_baseline_account_circle_24"
         android:drawablePadding="12dp"
         android:ems="10"
-        android:hint="@string/login_emailAddress"
+        android:hint="@string/userName"
         android:importantForAutofill="no"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:paddingStart="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/register_confirmPassword"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="30dp"
-        android:drawableStart="@drawable/ic_baseline_lock_24"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:hint="@string/register_confirmPassword"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        android:paddingStart="12dp"
-        android:textColorHighlight="?android:attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="@+id/register_password"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/register_password"
-        app:layout_constraintTop_toBottomOf="@+id/register_password" />
+        app:layout_constraintTop_toBottomOf="@+id/registerTitle" />
 
     <EditText
         android:id="@+id/register_password"
@@ -71,16 +52,48 @@
         android:paddingStart="12dp"
         android:textColorHighlight="?android:attr/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/register_emailAddress"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/register_emailAddress"
         app:layout_constraintTop_toBottomOf="@+id/register_emailAddress" />
+
+    <EditText
+        android:id="@+id/register_confirmPassword"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="@string/register_confirmPassword"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:paddingStart="12dp"
+        android:textColorHighlight="?android:attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/register_password"
+        app:layout_constraintStart_toStartOf="@+id/register_password"
+        app:layout_constraintTop_toBottomOf="@+id/register_password" />
+
+    <EditText
+        android:id="@+id/register_emailAddress"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="@string/login_emailAddress"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:paddingStart="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/register_userName"
+        app:layout_constraintStart_toStartOf="@+id/register_userName"
+        app:layout_constraintTop_toBottomOf="@+id/register_userName" />
 
     <Button
         android:id="@+id/register_button"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="100dp"
         android:layout_height="56dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         android:text="@string/regActivityButton"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="@+id/register_confirmPassword"
@@ -91,13 +104,11 @@
         android:id="@+id/registerTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:text="@string/register_title"
         android:textColor="@color/purple_500"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
-        app:layout_constraintStart_toEndOf="@+id/register_toolbar"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/register_toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,22 +31,30 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_textView" />
 
     <TextView
-        android:id="@+id/profile_showEmail"
+        android:id="@+id/profile_showName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
+        android:layout_marginTop="40dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/information"
         app:layout_constraintStart_toStartOf="@+id/information"
         app:layout_constraintTop_toBottomOf="@+id/information" />
 
     <TextView
+        android:id="@+id/profile_showEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/profile_showName"
+        app:layout_constraintStart_toStartOf="@+id/profile_showName"
+        app:layout_constraintTop_toBottomOf="@+id/profile_showName" />
+
+    <TextView
         android:id="@+id/profile_showPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:gravity="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/profile_showEmail"
         app:layout_constraintStart_toStartOf="@+id/profile_showEmail"
@@ -57,7 +65,7 @@
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="110dp"
         android:layout_height="56dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="88dp"
         android:text="@string/resign"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"

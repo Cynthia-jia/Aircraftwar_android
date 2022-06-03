@@ -22,8 +22,9 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etEmail;
     private EditText etPassword;
     private EditText etConfirm;
+    private EditText etUserName;
     private Button registerBtn;
-    private String TAG = "RegisterActivity";
+    private final String TAG = "RegisterActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +39,14 @@ public class RegisterActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.register_emailAddress);
         etPassword = findViewById(R.id.register_password);
         etConfirm = findViewById(R.id.register_confirmPassword);
+        etUserName = findViewById(R.id.register_userName);
 
         registerBtn = findViewById(R.id.register_button);
         registerBtn.setOnClickListener(v -> {
             if (isUserEmailAndPwdValid()) {
                 String email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
+                String userName = etUserName.getText().toString();
                 //检查是否已有用户
                 List<User> users = LitePal.findAll(User.class);
                 for (int i=0; i<users.size(); i++) {
@@ -58,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
                 //新建用户
-                User user = new User(email, password);
+                User user = new User(userName, email, password);
                 boolean successful = user.save();
                 if (successful) {
                     Log.d(TAG, "createUserWithEmail:success");
@@ -80,7 +83,11 @@ public class RegisterActivity extends AppCompatActivity {
     public boolean isUserEmailAndPwdValid() {
         String userEmail = etEmail.getText().toString();
         String userPwd = etPassword.getText().toString();
-        if (userEmail.equals("")){
+        String userName = etUserName.getText().toString();
+        if (userName.equals("")) {
+            Toast.makeText(this, "用户名不能为空", Toast.LENGTH_SHORT).show();
+            return false;
+        }else if (userEmail.equals("")) {
             Toast.makeText(this, "邮箱不能为空", Toast.LENGTH_SHORT).show();
             return false;
         }else if (userPwd.equals("")) {
