@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.text.method.TransformationMethod;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.hit.aircraft_war.controller.ActivityController;
@@ -21,6 +25,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etEmail;
     private EditText etPassword;
 
+    private ImageView displayPassword;
+    private boolean isHide = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
 
         Button loginBtn = findViewById(R.id.login_button);
         Button registerBtn = findViewById(R.id.reg_button);
+        displayPassword = findViewById(R.id.password_imageView);
         etEmail = findViewById(R.id.login_emailAddress);
         etPassword = findViewById(R.id.login_password);
 
@@ -44,6 +52,23 @@ public class LoginActivity extends AppCompatActivity {
         registerBtn.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
+        });
+        //设置密码的可见与不可见
+        displayPassword.setImageResource(R.drawable.ic_baseline_visibility_off_24);
+        displayPassword.setOnClickListener(v -> {
+            if (isHide) {
+                displayPassword.setImageResource(R.drawable.ic_baseline_visibility_24);
+                HideReturnsTransformationMethod visibleMethod = HideReturnsTransformationMethod.getInstance();
+                etPassword.setTransformationMethod(visibleMethod);
+                isHide = false;
+            }else {
+                displayPassword.setImageResource(R.drawable.ic_baseline_visibility_off_24);
+                TransformationMethod invisibleMethod = PasswordTransformationMethod.getInstance();
+                etPassword.setTransformationMethod(invisibleMethod);
+                isHide = true;
+            }
+            int index = etPassword.getText().toString().length();
+            etPassword.setSelection(index);
         });
     }
 
