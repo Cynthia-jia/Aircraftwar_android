@@ -1,4 +1,4 @@
-package com.hit.aircraft_war.store;
+package com.hit.aircraft_war.store.dao;
 
 import java.util.List;
 

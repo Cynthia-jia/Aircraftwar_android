@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     public  static boolean bgmFlag;
 
+    private String name;
+
     //获取屏幕宽高
     public void getScreenHW(){
         DisplayMetrics dm = new DisplayMetrics();
@@ -76,10 +78,14 @@ public class MainActivity extends AppCompatActivity {
             bgmFlag =true;
         });
 
+        Intent lastIntent = getIntent();
+        name = lastIntent.getStringExtra("userName");
+
         findViewById(R.id.main_easyButton).setOnClickListener(v -> {
             difficultChoice = 0;
             ActivityController.finishAll();
             Intent intent = new Intent(this, GameActivity.class);
+            intent.putExtra("userName", name);
             startActivity(intent);
             finish();
         });
@@ -88,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
             difficultChoice = 1;
             ActivityController.finishAll();
             Intent intent = new Intent(this, GameActivity.class);
+            intent.putExtra("userName", name);
             startActivity(intent);
             finish();
         });
@@ -96,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             difficultChoice = 2;
             ActivityController.finishAll();
             Intent intent = new Intent(this, GameActivity.class);
+            intent.putExtra("userName", name);
             startActivity(intent);
             finish();
         });

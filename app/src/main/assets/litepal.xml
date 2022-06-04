@@ -8,10 +8,13 @@
         定义数据库的版本。每一次当你想要数据库升级时,如表中添加字段了增加表了。
         修改模型中定义的映射标签“version”,就使版本值+ 1,数据库的升级将自动处理而不会出现问题。
     -->
-    <version value="2" />
+    <version value="3" />
 
     <list>
         <mapping class="com.hit.aircraft_war.store.User"/>
+        <mapping class="com.hit.aircraft_war.store.divide.EasyTable"/>
+        <mapping class="com.hit.aircraft_war.store.divide.MediumTable"/>
+        <mapping class="com.hit.aircraft_war.store.divide.HardTable"/>
     </list>
     <!--
         定义.db文件的位置。

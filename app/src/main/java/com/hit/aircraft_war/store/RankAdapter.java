@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hit.aircraft_war.R;
+import com.hit.aircraft_war.store.dao.RankMember;
 
 import java.util.List;
 

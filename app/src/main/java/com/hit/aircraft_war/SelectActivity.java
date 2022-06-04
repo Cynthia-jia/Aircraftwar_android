@@ -8,11 +8,17 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.hit.aircraft_war.controller.ActivityController;
+import com.hit.aircraft_war.store.User;
+
+import org.litepal.LitePal;
+
+import java.util.List;
 
 public class SelectActivity extends AppCompatActivity {
 
     private String email;
     private String password;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +38,18 @@ public class SelectActivity extends AppCompatActivity {
         Intent lastIntent = getIntent();
         email = lastIntent.getStringExtra("userEmail");
         password = lastIntent.getStringExtra("userPassword");
+        List<User> users = LitePal.where("userEmail = ?", email).find(User.class);
+        name = users.get(0).getUserName();
 
         singleBtn.setOnClickListener(v -> {
             Intent intent = new Intent(SelectActivity.this, MainActivity.class);
+            intent.putExtra("userName", name);
             startActivity(intent);
         });
 
         doubleBtn.setOnClickListener(v -> {
             Intent intent = new Intent(SelectActivity.this, MainActivity.class);
+            intent.putExtra("userName", name);
             startActivity(intent);
         });
 
@@ -47,6 +57,7 @@ public class SelectActivity extends AppCompatActivity {
             Intent intent = new Intent(SelectActivity.this, ProfileActivity.class);
             intent.putExtra("userEmail",email);
             intent.putExtra("userPassword",password);
+            intent.putExtra("userName", name);
             startActivity(intent);
         });
     }

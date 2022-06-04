@@ -22,7 +22,7 @@
         android:id="@+id/information"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="36dp"
         android:text="@string/information"
         android:textColor="@color/black"
         android:textSize="24sp"
@@ -34,7 +34,7 @@
         android:id="@+id/profile_showName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="12dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/information"
         app:layout_constraintStart_toStartOf="@+id/information"
@@ -44,7 +44,7 @@
         android:id="@+id/profile_showEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/profile_showName"
         app:layout_constraintStart_toStartOf="@+id/profile_showName"
@@ -54,34 +54,99 @@
         android:id="@+id/profile_showPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/profile_showEmail"
         app:layout_constraintStart_toStartOf="@+id/profile_showEmail"
         app:layout_constraintTop_toBottomOf="@+id/profile_showEmail" />
+
+    <TextView
+        android:id="@+id/profile_easyBest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/profile_mediumBest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24sp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/profile_easyBest"
+        app:layout_constraintStart_toStartOf="@+id/profile_easyBest"
+        app:layout_constraintTop_toBottomOf="@+id/profile_easyBest" />
+
+    <TextView
+        android:id="@+id/profile_hardBest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/profile_mediumBest"
+        app:layout_constraintStart_toStartOf="@+id/profile_mediumBest"
+        app:layout_constraintTop_toBottomOf="@+id/profile_mediumBest" />
 
     <Button
         android:id="@+id/profile_resignButton"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="110dp"
         android:layout_height="56dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="24dp"
         android:text="@string/resign"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_showPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/profile_hardBest"
+        app:layout_constraintStart_toStartOf="@+id/profile_hardBest"
+        app:layout_constraintTop_toBottomOf="@+id/profile_hardBest" />
 
     <Button
         android:id="@+id/profile_deleteButton"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_height="42dp"
         android:gravity="center"
         android:text="@string/deleteInfo"
+        app:layout_constraintEnd_toEndOf="@+id/profile_deleteHistory"
+        app:layout_constraintStart_toStartOf="@+id/profile_deleteHistory"
+        app:layout_constraintTop_toBottomOf="@+id/profile_deleteHistory" />
+
+    <Button
+        android:id="@+id/profile_changeButton"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/ic_baseline_edit_24"
+        android:paddingLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/information"
+        app:layout_constraintStart_toEndOf="@+id/information"
+        app:layout_constraintTop_toTopOf="@+id/information" />
+
+    <Button
+        android:id="@+id/profile_deleteHistory"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/deleteHistory"
         app:layout_constraintEnd_toEndOf="@+id/profile_resignButton"
         app:layout_constraintStart_toStartOf="@+id/profile_resignButton"
         app:layout_constraintTop_toBottomOf="@+id/profile_resignButton" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/best"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/profile_showPassword"
+        app:layout_constraintStart_toStartOf="@+id/profile_showPassword"
+        app:layout_constraintTop_toBottomOf="@+id/profile_showPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

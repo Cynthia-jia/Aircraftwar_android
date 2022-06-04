@@ -29,4 +29,6 @@
     <string name="deleteInfo">注销账号</string>
     <string name="resign">退出登录</string>
     <string name="userName">用户名</string>
+    <string name="best">历史最佳</string>
+    <string name="deleteHistory">删除历史</string>
 </resources>

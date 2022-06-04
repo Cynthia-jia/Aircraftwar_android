@@ -5,13 +5,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.hit.aircraft_war.application.GameView;
-import com.hit.aircraft_war.application.ImageManager;
 import com.hit.aircraft_war.application.difficulty.EasyView;
 import com.hit.aircraft_war.application.difficulty.HardView;
 import com.hit.aircraft_war.application.difficulty.MediumView;
@@ -20,6 +18,7 @@ public class GameActivity extends AppCompatActivity {
 
     private GameView gameView;
     public static Handler handler;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +30,8 @@ public class GameActivity extends AppCompatActivity {
         }
 
         handler = new MyHandler();
+        Intent lastIntent = getIntent();
+        name = lastIntent.getStringExtra("userName");
 
         //生成gameView
 
@@ -60,6 +61,7 @@ public class GameActivity extends AppCompatActivity {
             if (msg.what == 0) {
                 RankActivity.newSCore = (int) msg.obj;
                 Intent intent = new Intent(GameActivity.this, RankActivity.class);
+                intent.putExtra("userName", name);
                 startActivity(intent);
                 finish();
             }
