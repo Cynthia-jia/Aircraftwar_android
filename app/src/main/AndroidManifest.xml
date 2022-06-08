@@ -18,7 +18,7 @@
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".SelectActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
@@ -32,7 +32,7 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RankActivity" />
         <activity android:name=".GameActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".SingleActivity" />
     </application>
 
 </manifest>

@@ -35,9 +35,9 @@ public class GameActivity extends AppCompatActivity {
 
         //生成gameView
 
-        if (MainActivity.difficultChoice == 0){
+        if (SingleActivity.difficultChoice == 0){
             gameView = new EasyView(this);
-        }else if (MainActivity.difficultChoice == 1){
+        }else if (SingleActivity.difficultChoice == 1){
             gameView = new MediumView(this);
         }else {
             gameView = new HardView(this);

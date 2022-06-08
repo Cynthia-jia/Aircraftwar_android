@@ -3,13 +3,8 @@ package com.hit.aircraft_war;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputFilter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,22 +17,12 @@ import com.hit.aircraft_war.store.dao.RankMember;
 import com.hit.aircraft_war.store.divide.EasyTable;
 import com.hit.aircraft_war.store.divide.HardTable;
 import com.hit.aircraft_war.store.divide.MediumTable;
-import com.hit.aircraft_war.store.divide.Table;
 
 import org.litepal.LitePal;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -73,7 +58,6 @@ public class RankActivity extends AppCompatActivity {
         }
         //构建recyclerView
         initRecyclerView();
-
     }
 
     @SuppressLint("SdCardPath")
@@ -91,7 +75,7 @@ public class RankActivity extends AppCompatActivity {
             name = lastIntent.getStringExtra("userName");
         }
 
-        if (MainActivity.difficultChoice == 0){
+        if (SingleActivity.difficultChoice == 0){
             EasyTable easyTable = new EasyTable(name, newSCore, dateString);
             easyTable.save();
 
@@ -103,7 +87,7 @@ public class RankActivity extends AppCompatActivity {
                 rankDao.doAdd(new RankMember(i+1, name, score, time));
             }
 
-        }else if (MainActivity.difficultChoice == 1){
+        }else if (SingleActivity.difficultChoice == 1){
             MediumTable mediumTable = new MediumTable(name, newSCore, dateString);
             mediumTable.save();
 

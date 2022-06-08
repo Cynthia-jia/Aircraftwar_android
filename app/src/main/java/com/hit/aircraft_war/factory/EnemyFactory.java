@@ -1,6 +1,6 @@
 package com.hit.aircraft_war.factory;
 
-import com.hit.aircraft_war.MainActivity;
+import com.hit.aircraft_war.SingleActivity;
 import com.hit.aircraft_war.aircraft.EliteEnemy;
 import com.hit.aircraft_war.aircraft.EnemyAircraft;
 import com.hit.aircraft_war.aircraft.MobEnemy;
@@ -19,8 +19,8 @@ public class EnemyFactory extends AbstractFactory{
         switch (type) {
             case "MobEnemy":
                 enemyAircraft = new MobEnemy(
-                        (int) (Math.random() * (MainActivity.WIDTH - ImageManager.MOB_ENEMY_IMAGE.getWidth())),
-                        (int) (Math.random() * MainActivity.HEIGHT * 0.2),
+                        (int) (Math.random() * (SingleActivity.WIDTH - ImageManager.MOB_ENEMY_IMAGE.getWidth())),
+                        (int) (Math.random() * SingleActivity.HEIGHT * 0.2),
                         0,
                         36+upgradeMobSpeed,
                         30);
@@ -31,16 +31,16 @@ public class EnemyFactory extends AbstractFactory{
                 if (ran <= 10){
                     //不会左右移动
                     enemyAircraft = new EliteEnemy(
-                            (int) (Math.random() * (MainActivity.WIDTH - ImageManager.MOB_ENEMY_IMAGE.getWidth())),
-                            (int) (Math.random() * MainActivity.HEIGHT * 0.2),
+                            (int) (Math.random() * (SingleActivity.WIDTH - ImageManager.MOB_ENEMY_IMAGE.getWidth())),
+                            (int) (Math.random() * SingleActivity.HEIGHT * 0.2),
                             0,
                             18,
                             90+upgradeEliteHp);
                 }else {
                     //会左右移动
                     enemyAircraft = new EliteEnemy(
-                            (int) (Math.random() * (MainActivity.WIDTH - ImageManager.MOB_ENEMY_IMAGE.getWidth())),
-                            (int) (Math.random() * MainActivity.HEIGHT * 0.2),
+                            (int) (Math.random() * (SingleActivity.WIDTH - ImageManager.MOB_ENEMY_IMAGE.getWidth())),
+                            (int) (Math.random() * SingleActivity.HEIGHT * 0.2),
                             15,
                             15,
                             90+upgradeEliteHp);

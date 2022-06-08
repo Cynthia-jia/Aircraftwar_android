@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
             String password = etPassword.getText().toString();
             List<User> userList = LitePal.where("userEmail = ? and userPassword = ?",email,password).find(User.class);
             if (userList.size()>0){//登陆成功
-                Intent intent = new Intent(LoginActivity.this, SelectActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 intent.putExtra("userEmail",email);
                 intent.putExtra("userPassword",password);
                 Toast.makeText(this, "登陆成功", Toast.LENGTH_SHORT).show();

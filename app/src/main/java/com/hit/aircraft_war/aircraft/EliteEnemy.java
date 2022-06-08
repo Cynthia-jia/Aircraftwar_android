@@ -1,6 +1,6 @@
 package com.hit.aircraft_war.aircraft;
 
-import com.hit.aircraft_war.MainActivity;
+import com.hit.aircraft_war.SingleActivity;
 import com.hit.aircraft_war.application.GameView;
 import com.hit.aircraft_war.bullet.AbstractBullet;
 import com.hit.aircraft_war.factory.AbstractFactory;
@@ -41,7 +41,7 @@ public class EliteEnemy extends EnemyAircraft{
     public void forward() {
         super.forward();
         // 判定 y 轴向下飞行出界
-        if (locationY >= MainActivity.HEIGHT) {
+        if (locationY >= SingleActivity.HEIGHT) {
             vanish();
         }
     }

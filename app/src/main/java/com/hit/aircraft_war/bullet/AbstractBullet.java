@@ -1,6 +1,6 @@
 package com.hit.aircraft_war.bullet;
 
-import com.hit.aircraft_war.MainActivity;
+import com.hit.aircraft_war.SingleActivity;
 import com.hit.aircraft_war.basic.AbstractFlyingObject;
 
 public class AbstractBullet extends AbstractFlyingObject {
@@ -17,12 +17,12 @@ public class AbstractBullet extends AbstractFlyingObject {
         super.forward();
 
         // 判定 x 轴出界
-        if (locationX <= 0 || locationX >= MainActivity.WIDTH) {
+        if (locationX <= 0 || locationX >= SingleActivity.WIDTH) {
             vanish();
         }
 
         // 判定 y 轴出界
-        if (speedY > 0 && locationY >= MainActivity.HEIGHT) {
+        if (speedY > 0 && locationY >= SingleActivity.HEIGHT) {
             // 向下飞行出界
             vanish();
         }else if (locationY <= 0){
