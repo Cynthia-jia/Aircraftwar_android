@@ -19,7 +19,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 
 import com.hit.aircraft_war.GameActivity;
-import com.hit.aircraft_war.SingleActivity;
+import com.hit.aircraft_war.MainActivity;
 import com.hit.aircraft_war.R;
 import com.hit.aircraft_war.aircraft.BossEnemy;
 import com.hit.aircraft_war.aircraft.EliteEnemy;
@@ -82,8 +82,8 @@ public abstract class GameView extends SurfaceView implements
     private boolean gameOverFlag = false;
     public static boolean bossAppearFlag = false;
 
-    private int screenHeight = SingleActivity.HEIGHT;
-    private int screenWidth = SingleActivity.WIDTH;
+    private int screenHeight = MainActivity.HEIGHT;
+    private int screenWidth = MainActivity.WIDTH;
 
     protected boolean changeBgm;
     private int score = 0;
@@ -170,7 +170,7 @@ public abstract class GameView extends SurfaceView implements
     public final void action() {
 
 
-        if(SingleActivity.bgmFlag) {
+        if(MainActivity.bgmFlag) {
             bgmPlayer.setLooping(true);
             if (bgmPlayer.isPlaying()) {
                 bgmPlayer.start();
@@ -230,7 +230,7 @@ public abstract class GameView extends SurfaceView implements
         // 英雄机射出子弹
         if (heroShootRate()){
             heroBullets.addAll(heroAircraft.shoot());
-            if(SingleActivity.bgmFlag) {
+            if(MainActivity.bgmFlag) {
                 playBullet();
             }
         }
@@ -259,7 +259,7 @@ public abstract class GameView extends SurfaceView implements
         // 游戏结束检查
         if (heroAircraft.getHp() <= 0) {
 
-            if(SingleActivity.bgmFlag) {
+            if(MainActivity.bgmFlag) {
                 stopMusic(bgmPlayer);
                 stopMusic(bossBgmPlayer);
                 playGameOver();
@@ -294,7 +294,7 @@ public abstract class GameView extends SurfaceView implements
                 enemyBullets.addAll(enemyAircrafts.get(i).shoot());
             }
         }
-        if(SingleActivity.bgmFlag) {
+        if(MainActivity.bgmFlag) {
             playBullet();
         }
 
@@ -342,7 +342,7 @@ public abstract class GameView extends SurfaceView implements
                 // 英雄机损失一定生命值
                 heroAircraft.decreaseHp(enemyBullets.get(i).getPower());
 
-                if(SingleActivity.bgmFlag) {
+                if(MainActivity.bgmFlag) {
                     playBulletHit();
                 }
                 enemyBullets.get(i).vanish();
@@ -364,7 +364,7 @@ public abstract class GameView extends SurfaceView implements
                     // 敌机撞击到英雄机子弹
                     // 敌机损失一定生命值
 
-                    if(SingleActivity.bgmFlag) {
+                    if(MainActivity.bgmFlag) {
                         playBulletHit();
                     }
 
@@ -388,7 +388,7 @@ public abstract class GameView extends SurfaceView implements
                             bossAppearFlag = false;
                             score += 90;
 
-                            if(SingleActivity.bgmFlag) {
+                            if(MainActivity.bgmFlag) {
                                 stopMusic(bossBgmPlayer);
                                 bgmPlayer.setLooping(true);
                                 if (bgmPlayer.isPlaying()){
@@ -430,7 +430,7 @@ public abstract class GameView extends SurfaceView implements
 
 
                     //加血道具
-                    if(SingleActivity.bgmFlag) {
+                    if(MainActivity.bgmFlag) {
                         playGetSupply();
                     }
                     ((HpSupply) supply.get(i)).executeHp(heroAircraft);
@@ -438,7 +438,7 @@ public abstract class GameView extends SurfaceView implements
                 }
                 else if (supply.get(i) instanceof FireSupply){
                     //火力道具生效15s
-                        if(SingleActivity.bgmFlag) {
+                        if(MainActivity.bgmFlag) {
                             playGetSupply();}
 
                     ((FireSupply) supply.get(i)).executeFire(heroAircraft);
@@ -446,7 +446,7 @@ public abstract class GameView extends SurfaceView implements
                 }
                 else if (supply.get(i) instanceof BombSupply){
                     //炸弹道具
-                    if(SingleActivity.bgmFlag) {
+                    if(MainActivity.bgmFlag) {
                             playBombExplosion();}
 
                     //添加订阅者
@@ -532,7 +532,7 @@ public abstract class GameView extends SurfaceView implements
                 double latestX = motionEvent.getX();
                 double latestY = motionEvent.getY();
 
-                if ( latestX<0 || latestX> SingleActivity.WIDTH || latestY<0 || latestY> SingleActivity.HEIGHT){
+                if ( latestX<0 || latestX> MainActivity.WIDTH || latestY<0 || latestY> MainActivity.HEIGHT){
                     //防止出界
                     return false;
                 }

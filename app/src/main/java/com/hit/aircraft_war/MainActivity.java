@@ -1,64 +1,126 @@
 package com.hit.aircraft_war;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.Toast;
+
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Button;
-
 import com.hit.aircraft_war.controller.ActivityController;
-import com.hit.aircraft_war.store.User;
-
-import org.litepal.LitePal;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String email;
-    private String password;
+    /**难度标志
+     * 0简单，1普通，2困难
+     * */
+    public static int difficultChoice;
+
+    public static int WIDTH;
+    public static int HEIGHT;
+    public int  m;
+
+    public  static boolean bgmFlag;
+
     private String name;
+
+    //获取屏幕宽高
+    public void getScreenHW(){
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+
+        //窗口宽度与宽度
+        WIDTH = dm.widthPixels;
+        HEIGHT = dm.heightPixels;
+
+    }
+
+
+    private Switch s;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActivityController.addActivity(this);
+        getScreenHW();
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();
         }
 
-        Button singleBtn = findViewById(R.id.select_singleButton);
-        Button doubleBtn = findViewById(R.id.select_doubleButton);
-        Button profileBtn = findViewById(R.id.select_profileButton);
+        s = (Switch) findViewById(R.id.soundSwitch);
+
+        s.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    //选中时 do some thing
+                    bgmFlag=true;
+                    Toast.makeText(MainActivity.this,"音效开启", Toast.LENGTH_SHORT).show();
+                } else {
+                    //非选中时 do some thing
+                    bgmFlag=false;
+                    Toast.makeText(MainActivity.this,"音效关闭", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+        findViewById(R.id.soundSwitch).setOnClickListener(v -> {
+
+            bgmFlag =true;
+        });
 
         Intent lastIntent = getIntent();
-        email = lastIntent.getStringExtra("userEmail");
-        password = lastIntent.getStringExtra("userPassword");
-        List<User> users = LitePal.where("userEmail = ?", email).find(User.class);
-        name = users.get(0).getUserName();
+        name = lastIntent.getStringExtra("userName");
 
-        singleBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, SingleActivity.class);
-            intent.putExtra("userName", name);
-            startActivity(intent);
+        findViewById(R.id.main_easyButton).setOnClickListener(v -> {
+            //联网与等待
+            if (SelectActivity.network) {
+                connectNetwork();
+            }
+            //开始游戏
+            difficultChoice = 0;
+            startGame();
         });
 
-        doubleBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, SingleActivity.class);
-            intent.putExtra("userName", name);
-            startActivity(intent);
+        findViewById(R.id.main_mediumButton).setOnClickListener(v -> {
+            //联网与等待
+            if (SelectActivity.network) {
+                connectNetwork();
+            }
+            //开始游戏
+            difficultChoice = 1;
+            startGame();
         });
 
-        profileBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-            intent.putExtra("userEmail",email);
-            intent.putExtra("userPassword",password);
-            intent.putExtra("userName", name);
-            startActivity(intent);
+        findViewById(R.id.main_hardButton).setOnClickListener(v -> {
+            //联网与等待
+            if (SelectActivity.network) {
+                connectNetwork();
+            }
+            //开始游戏
+            difficultChoice = 2;
+            startGame();
         });
+    }
+
+    public void startGame(){
+        ActivityController.finishAll();
+        Intent intent = new Intent(this, GameActivity.class);
+        intent.putExtra("userName", name);
+        startActivity(intent);
+        finish();
+    }
+
+    public void connectNetwork(){
+        //Todo
     }
 }

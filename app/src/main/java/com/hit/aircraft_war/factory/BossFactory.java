@@ -1,6 +1,6 @@
 package com.hit.aircraft_war.factory;
 
-import com.hit.aircraft_war.SingleActivity;
+import com.hit.aircraft_war.MainActivity;
 import com.hit.aircraft_war.aircraft.BossEnemy;
 import com.hit.aircraft_war.aircraft.EnemyAircraft;
 import com.hit.aircraft_war.application.ImageManager;
@@ -18,8 +18,8 @@ public class BossFactory extends AbstractFactory{
 
         if (type.equals("BossEnemy")){
             boss = new BossEnemy(
-                    (int) (Math.random() * (SingleActivity.WIDTH - ImageManager.MOB_ENEMY_IMAGE.getWidth())),
-                    (int) (Math.random() * SingleActivity.HEIGHT * 0.15),
+                    (int) (Math.random() * (MainActivity.WIDTH - ImageManager.MOB_ENEMY_IMAGE.getWidth())),
+                    (int) (Math.random() * MainActivity.HEIGHT * 0.15),
                     15,
                     0,
                     bossHp+addHp);

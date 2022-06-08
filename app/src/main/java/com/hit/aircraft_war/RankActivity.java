@@ -75,7 +75,7 @@ public class RankActivity extends AppCompatActivity {
             name = lastIntent.getStringExtra("userName");
         }
 
-        if (SingleActivity.difficultChoice == 0){
+        if (MainActivity.difficultChoice == 0){
             EasyTable easyTable = new EasyTable(name, newSCore, dateString);
             easyTable.save();
 
@@ -87,7 +87,7 @@ public class RankActivity extends AppCompatActivity {
                 rankDao.doAdd(new RankMember(i+1, name, score, time));
             }
 
-        }else if (SingleActivity.difficultChoice == 1){
+        }else if (MainActivity.difficultChoice == 1){
             MediumTable mediumTable = new MediumTable(name, newSCore, dateString);
             mediumTable.save();
 

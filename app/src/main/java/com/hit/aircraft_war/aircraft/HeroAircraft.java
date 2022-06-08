@@ -1,6 +1,6 @@
 package com.hit.aircraft_war.aircraft;
 
-import com.hit.aircraft_war.SingleActivity;
+import com.hit.aircraft_war.MainActivity;
 import com.hit.aircraft_war.application.ImageManager;
 import com.hit.aircraft_war.bullet.AbstractBullet;
 import com.hit.aircraft_war.strategy.ShootContext;
@@ -47,8 +47,8 @@ public class HeroAircraft extends AbstractAircraft{
 
     //单例，这里采用饿汉式
     private static HeroAircraft heroAircraft = new HeroAircraft(
-            SingleActivity.WIDTH / 2,
-            SingleActivity.HEIGHT - ImageManager.HERO_IMAGE.getHeight() ,
+            MainActivity.WIDTH / 2,
+            MainActivity.HEIGHT - ImageManager.HERO_IMAGE.getHeight() ,
             0, 0, 1000);
 
     //封闭构造方法
